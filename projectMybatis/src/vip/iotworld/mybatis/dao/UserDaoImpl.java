@@ -19,15 +19,15 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public User findUserById(int id) throws Exception {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		User user = sqlSession .selectOne("test.findUserById", id);
+		User user = sqlSession .selectOne("vip.iotworld.mybatis.mapper.UserMapper.findUserById", id);
 		sqlSession.close();
 		return user;
 	}
-
+	
 	@Override
 	public List<User> findUserByName(String name) throws Exception {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<User> list = sqlSession.selectList("test.findUserByName", name);
+		List<User> list = sqlSession.selectList("vip.iotworld.mybatis.mapper.UserMapper.findUserByName", name);
 		sqlSession.close();
 		return list;
 	}

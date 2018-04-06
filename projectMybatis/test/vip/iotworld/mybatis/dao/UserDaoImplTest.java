@@ -13,6 +13,7 @@ import vip.iotworld.mybatis.po.User;
 public class UserDaoImplTest {
 
 	private SqlSessionFactory sqlSessionFactory =null;
+	
 	@Before
 	public void setUp() throws Exception {
 		//mybatis 配置文件
@@ -28,9 +29,8 @@ public class UserDaoImplTest {
 		//创建UserDao的对象
 		UserDao userDao = new UserDaoImpl(sqlSessionFactory);
 		//调用UserDao方法
-		User user = userDao.findUserById(29);
+		User user = userDao.findUserById(1);
 		
 		System.out.println(user);
 	}
-
 }

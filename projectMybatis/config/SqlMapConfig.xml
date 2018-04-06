@@ -11,9 +11,14 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</properties>
 	
 	<!-- 全局配置参数，需要时再设置 -->
-	<!-- <settings>
-	
-	</settings> -->
+	<settings>
+		<!-- 打开延迟加载 的开关 ，mybatis默认没有开启延迟加载 -->
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<!-- 将积极加载改为消极加载即按需要加载 -->
+		<setting name="aggressiveLazyLoading" value="false"/>
+		<!-- 开启二级缓存，二级缓存的范围更大，多个sqlSession可以共享一个UserMapper的二级缓存区域 ，mybatis默认一级缓存-->
+		<setting name="cacheEnabled" value="true"/>
+	</settings>
 	
 	<!-- 别名定义 -->
 	<typeAliases>

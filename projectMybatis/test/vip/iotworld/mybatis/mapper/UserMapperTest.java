@@ -37,6 +37,7 @@ public class UserMapperTest {
 		//调用usermapper对象方法
 		User user = usermapper.findUserById(25);
 		System.out.println(user);
+		sqlSession.close();
 	}
 	
 	@Test
@@ -47,6 +48,7 @@ public class UserMapperTest {
 		//调用usermapper对象方法
 		List<User> list = usermapper.findUserByName("小明");
 		System.out.println(list);
+		sqlSession.close();
 	}
 	//用户信息综合查询
 	@Test
@@ -73,6 +75,7 @@ public class UserMapperTest {
 		System.out.println(list);
 		int count = usermapper.findUserCount(userQueryVo);
 		System.out.println(count);
+		sqlSession.close();
 	}
 	
 	@Test
@@ -83,6 +86,7 @@ public class UserMapperTest {
 		
 		User user = usermapper.findUserByIdResultMap(1);
 		System.out.println(user);
+		sqlSession.close();
 	}
 
 }
