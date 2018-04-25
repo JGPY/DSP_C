@@ -7,6 +7,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 注意：使用mapper代理方法开发，namespace有特殊重要的作用
 -->
 <mapper namespace="vip.iotworld.mybatis.mapper.UserMapper">
+
+	<!-- 开启本mapper的namespace下的二级缓存
+	type:指定cache接口的实现类的类型，mybatis默认使用PerpetualCache实现类,
+	要和ehcache整合，需要配置type为ehcache实现cache接口的整合
+	 -->
+	<cache type="org.mybatis.caches.ehcache.EhcacheCache"/>	
+
 	<!-- 定义sql片段
 	id：sql片段的唯 一标识
 	
@@ -79,7 +86,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	resultType：指定sql输出结果 的所映射的java对象类型，select指定resultType表示将单条记录映射成的java对象。
 	 -->
-	<select id="findUserById" parameterType="int" resultType="vip.iotworld.mybatis.po.User">
+	<select id="findUserById" parameterType="int" resultType="vip.iotworld.mybatis.po.User" useCache="true">
 		SELECT * FROM USER WHERE id=#{value}
 	</select>
 	

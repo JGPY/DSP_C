@@ -3,12 +3,12 @@ package vip.iotworld.mybatis.po;
 import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable{
+public class User implements Serializable {
 	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -5177670581197502639L;
+	private static final long serialVersionUID = 1L;
 	
 	private int id;
 	private String username;// 用户姓名
