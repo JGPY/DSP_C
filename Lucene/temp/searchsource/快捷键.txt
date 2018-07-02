@@ -1,0 +1,28 @@
+CRM	customer relationship management
+OA	office automation 
+BOS 	
+ERP	enterprise resource planning
+
+
+https://blog.csdn.net/tantexian/article/details/50414327
+https://blog.csdn.net/believejava/article/details/43229361
+
+
+eclipse快捷键
+
+ctrl+k
+
+Ctrl+2-->L
+shift+alt+L
+
+alt+上下箭头
+
+光标位置在类或方法名上 
+Ctrl+O
+Ctrl+E
+
+
+Ctrl+shift+R open resource
+
+
+Ctrl+H

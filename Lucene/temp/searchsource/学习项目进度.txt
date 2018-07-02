@@ -1,0 +1,42 @@
+F:\黑马JavaEE32期\BOS-day02\BOS-day02\BOS-day02\BOS-day04\视频	01
+
+G:\1.Java教程\保卫师兄\新巴巴运动网\day76_babSport 第二天		06
+
+
+F:\黑马JavaEE32期\Lucene&solr_day01\Lucene&solr_day01\Lucene&solr_day01 6
+
+spring IO Platform 
+
+Spring Boot
+ 
+Spring XD
+
+Spring Cloud
+
+Spring Data
+
+Spring Integration
+
+Spring Batch
+
+Spring Security
+
+Spring Hateoas
+
+Spring Social 
+
+Spring AMQP
+
+Spring for Andriod
+
+Spring Mobile
+
+Spring Web Flow
+
+Spring Web Services ：Spring Web Service(Spring WS)是基于Spring框架的Web服务框架，主要侧重于基于文档驱动的web服务，提供SOAP 服务开发，允许通过多种方式创建Web服务
+
+Spring LDAP：Spring LDAP 是一个用于操作LDAP的Java框架，类似于SpringJDBC提供了jdbcTemplate方式来操作数据库。这个框架提供了一个LapTemplater操作模板，可以帮助开发人员简化lookingup,closing contexts, encoding/decoding values,filters等操作。
+
+Spring Session  ：Spring Session 致力于提供一个公共基础设施会话，支持从任意环境中访问一个会话。在web环境下支持独立于容器的集群会话，支持可插拔策略来确定SessionID， WebSocket活跃的时候可以简单的保持HttpSession
+
+Spring Shell  ： Spring Shell 提供交互式Shell，用户可使用简单的基于Spring的编程模型来开发命令
