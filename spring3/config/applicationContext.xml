@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- demo1快速入门==================================== -->
+	<!-- 通过一个<bean>标签设置类的信息,通过id属性为类起个标识. -->
+	<bean id="userService"
+		class="cn.itcast.spring3.demo1.HelloServiceImpl">
+		<!-- 使用<property>标签注入属性 -->
+		<property name="info" value="传智播客" />
+	</bean>
+	<!-- demo1快速入门==================================== end -->
+
+	<!-- demo2Bean的实例化==================================== -->
+	<!-- 默认情况下使用的就是无参数的构造方法. -->
+	<!-- <bean name="bean1" class="cn.itcast.spring3.demo2.Bean1"></bean> -->
+
+	<!-- 第二种使用静态工厂实例化 -->
+	<!-- <bean id="bean2" class="cn.itcast.spring3.demo2.Bean2Factory" factory-method="getBean2"></bean> -->
+
+	<!-- 第三种使用实例工厂实例化 -->
+	<!-- <bean id="bean3" factory-bean="bean3Factory" factory-method="getBean3"></bean> 
+		<bean id="bean3Factory" class="cn.itcast.spring3.demo2.Bean3Factory"/> -->
+	<!-- demo2Bean的实例化==================================== end -->
+
+	<!-- demo3Bean的作用范围==================================== -->
+
+	<!-- <bean id="customer" class="cn.itcast.spring3.demo3.Customer" scope="prototype"/> 
+		<bean id="product" class="cn.itcast.spring3.demo3.Product" init-method="setup" 
+		destroy-method="teardown"> <property name="name" value="空调"></property> </bean> -->
+	<!-- demo3Bean的作用范围==================================== end -->
+
+	<!-- demo4Bean的生命周期==================================== -->
+
+	<!-- <bean id="customerService" class="cn.itcast.spring3.demo4.CustomerServiceImpl" 
+		init-method="setup" destroy-method="teardown"> <property name="name" value="itcast"></property> 
+		</bean> <bean class="cn.itcast.spring3.demo4.MyBeanPostProcessor"></bean> -->
+	<!-- demo4Bean的生命周期==================================== end -->
+
+	<!-- demo5Bean的属性注入==================================== -->
+	<!-- 构造方法的注入 -->
+	<bean id="car" class="cn.itcast.spring3.demo5.Car">
+		<!-- <constructor-arg name="name" value="宝马"/> <constructor-arg name="price" 
+			value="1000000"/> -->
+		<constructor-arg index="0" type="java.lang.String"
+			value="奔驰" />
+		<constructor-arg index="1" type="java.lang.Double"
+			value="2000000" />
+	</bean>
+
+	<!-- <bean id="car2" class="cn.itcast.spring3.demo5.Car2"> <property>标签中name就是属性名称,value是普通属性的值,ref:引用其他的对象 
+		<property name="name" value="奇瑞QQ"/> <property name="price" value="20000"/> 
+		</bean> -->
+
+	<!-- <bean id="car2" class="cn.itcast.spring3.demo5.Car2" p:name="宝马" p:price="400000"/> -->
+
+	<bean id="car2" class="cn.itcast.spring3.demo5.Car2">
+		<property name="name" value="#{'大众'}"></property>
+		<property name="price" value="#{'120000'}"></property>
+	</bean>
+
+	<!-- <bean id="person" class="cn.itcast.spring3.demo5.Person"> <property 
+		name="name" value="任童"/> <property name="car2" ref="car2"/> </bean> -->
+	<!-- p名称空间的写法 -->
+	<!-- <bean id="person" class="cn.itcast.spring3.demo5.Person" p:name="童童" 
+		p:car2-ref="car2"> </bean> -->
+	<!-- SpEL写法 -->
+	<bean id="person" class="cn.itcast.spring3.demo5.Person">
+		<property name="name" value="#{personInfo.showName()}" />
+		<property name="car2" value="#{car2}" />
+	</bean>
+
+	<bean id="personInfo" class="cn.itcast.spring3.demo5.PersonInfo">
+		<property name="name" value="张三" />
+	</bean>
+	<!-- demo5Bean的属性注入==================================== end -->
+
+	<import resource="applicationContext2.xml" />
+</beans>
